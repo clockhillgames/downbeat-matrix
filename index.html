@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#000"><link rel="icon" href="favicon.png"><title>DOWNBEAT – Matrix</title>
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;overscroll-behavior:none}
+canvas{position:fixed;inset:0;width:100vw;height:100vh;display:block}
+#hud{position:fixed;top:env(safe-area-inset-top,0);left:0;right:0;padding:10px 14px;font:600 15px/1.3 ui-monospace,Menlo,monospace;color:#3f6;text-shadow:0 0 8px #0f4;display:flex;justify-content:space-between;pointer-events:none}
+#start{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.85);color:#3f6;font:600 16px ui-monospace,Menlo,monospace;text-align:center;padding:24px;gap:14px}
+#start h1{font-size:40px;margin:0;letter-spacing:6px;text-shadow:0 0 18px #0f4}
+#go{font:700 22px ui-monospace,monospace;color:#000;background:#3f6;border:0;border-radius:12px;padding:16px 40px;box-shadow:0 0 24px #0f4}
+#cal{position:fixed;bottom:calc(env(safe-area-inset-bottom,0) + 8px);left:0;right:0;text-align:center;color:#3f6;font:13px ui-monospace,monospace}
+#cal input{width:60%;accent-color:#3f6}
+#err{color:#f55;font-size:12px}
+</style></head><body>
+<canvas id="c"></canvas>
+<div id="hud"><span id="score">0</span><span id="combo">x0</span><span id="tier">T1</span></div>
+<div id="cal">offset <input id="off" type="range" min="-200" max="200" step="5" value="0"> <span id="offv">0 ms</span></div>
+<div id="start"><h1>DOWNBEAT</h1><div>LEVEL: THE LOBBY · 136 BPM</div>
+<div style="max-width:320px;opacity:.85">Tap anywhere when a ring closes onto its target. The rings land on the beat and on the off-beat gaps. Build your combo to raise the intensity and upgrade your guns. Tier 4 triggers BULLET TIME.</div>
+<button id="go">TAP TO START</button><div id="load"></div><div id="err"></div></div>
+<script src="game.js"></script></body></html>
